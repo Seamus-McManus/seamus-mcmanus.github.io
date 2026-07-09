@@ -33,6 +33,15 @@
            transform: scale(95%);
         }
     }
+    .batman-spin{
+        animation:batman-spin 2s linear;
+    }
+    @keyframes batman-spin{
+        100%{
+            transform:scale(10000%) rotate(10turn);
+        }
+
+    }
     .gradient-text
     {
         background: linear-gradient(
@@ -77,7 +86,7 @@
 <body style="font-family:Cascadia Code;text-align:center; background-color:black;color:white;">
 <div class="glassbg">
     <div class="ascii-text">
-    <p style="white-space: pre;">
+    <p style="white-space: pre;" id="asciiback">
  ██████╗ ██████╗ ███╗   ███╗██╗███╗   ██╗ ██████╗     ███████╗ ██████╗  ██████╗ ███╗   ██╗
 ██╔════╝██╔═══██╗████╗ ████║██║████╗  ██║██╔════╝     ██╔════╝██╔═══██╗██╔═══██╗████╗  ██║
 ██║     ██║   ██║██╔████╔██║██║██╔██╗ ██║██║  ███╗    ███████╗██║   ██║██║   ██║██╔██╗ ██║
@@ -87,8 +96,8 @@
 </p>                                                                                      
 </div>
 </div>
-    <div class="ascii-text">
-    <p style="white-space: pre;" >
+    <div class="ascii-text"id="asciifront">
+    <p style="white-space: pre;"> 
  ██████╗ ██████╗ ███╗   ███╗██╗███╗   ██╗ ██████╗     ███████╗ ██████╗  ██████╗ ███╗   ██╗
 ██╔════╝██╔═══██╗████╗ ████║██║████╗  ██║██╔════╝     ██╔════╝██╔═══██╗██╔═══██╗████╗  ██║
 ██║     ██║   ██║██╔████╔██║██║██╔██╗ ██║██║  ███╗    ███████╗██║   ██║██║   ██║██╔██╗ ██║
@@ -97,7 +106,23 @@
  ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝     ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝
 </p>                                                                                      
 </div>
+
 <h1 class="gradient-text" style="font-size:4.5vw">Come pay a visit a little later!</h1>     
 <p style="font-size:3vw;">Things are still in the works, but I promise <a class="a" href="moreinfo.html" style="text-decoration: none;">cool stuff</a> will be here very soon ;)</p>
 <p style="padding-top:500%;font-size:3vw;color:white;">oh, hi there! :D</p>
+<script>
+    let batmanEffect = new Audio('batman-transition.mp3');
+    const possibleSites = ["https://watching-grass-grow.com","https://everydaycode.com/","https://tetr.io/","https://milk.com","https://cdn.formandtemplate.com/image/employment-application-form-01.jpg","https://cdn.formandtemplate.com/image/employment-application-form-01.jpg","https://cdn.formandtemplate.com/image/employment-application-form-01.jpg",,"https://cdn.formandtemplate.com/image/employment-application-form-01.jpg"];
+    let link = possibleSites[Math.floor(Math.random()*possibleSites.length)];
+    console.log(link);
+    document.getElementById("asciifront").addEventListener("click",function() {
+        let font =  document.getElementById("asciifront");
+        let fontUnder = document.getElementById("asciiback")
+        font.classList.add("batman-spin");
+        fontUnder.classList.add("batman-spin");
+        batmanEffect.play();
+        setTimeout(function() {
+window.location.href=link;}, 2000);
+    })
+</script>
 </body>
