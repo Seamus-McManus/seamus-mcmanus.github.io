@@ -113,9 +113,9 @@
 <script>
     let batmanEffect = new Audio('batman-transition.mp3');
     const possibleSites = ["https://watching-grass-grow.com","https://everydaycode.com/","https://tetr.io/","https://milk.com","https://cdn.formandtemplate.com/image/employment-application-form-01.jpg","https://cdn.formandtemplate.com/image/employment-application-form-01.jpg","https://cdn.formandtemplate.com/image/employment-application-form-01.jpg","https://cdn.formandtemplate.com/image/employment-application-form-01.jpg"];
-    let link = possibleSites[Math.floor(Math.random()*possibleSites.length)];
     console.log(link);
     document.getElementById("asciifront").addEventListener("click",function() {
+		let link = possibleSites[Math.floor(Math.random()*possibleSites.length)];
         let font =  document.getElementById("asciifront");
         let fontUnder = document.getElementById("asciiback")
         font.classList.add("batman-spin");
