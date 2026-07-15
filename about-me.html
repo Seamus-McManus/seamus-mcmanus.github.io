@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" href="reused-styles.css">
+<style>
+    /*horizontal flex container*/
+    .horiz-flex{
+        align-items: center;
+        display: flex;
+        justify-content: space-evenly;
+        padding-bottom:5%;
+    }
+    /*nested vertical one*/
+    .horiz-flex.vertical-flex-left,.horiz-flex.vertical-flex-right{
+        display: flex;
+        flex-direction: row;
+        
+    }
+    /*slidein, with left and right classes*/
+    .slidein.right{
+        --direction: -1;
+        left:0;
+        animation: slidein 1s ease-in-out;
+    }
+    .slidein.left{
+        --direction: 1;
+        right:0%;
+        animation: slidein 1s ease-in-out;
+    }
+    @keyframes slidein{
+        from{
+            transform: translateX(calc(var(--direction)*100%));
+            opacity: 0;
+        }
+        to{
+            opacity: 100%;
+        }
+    }
+    .vertical-flex-right p {
+        text-align: end;
+        font-size: x-large;
+    }
+    .vertical-flex-left p {
+        text-align: start;
+        font-size: x-large;
+    }
+    /*for about me title logo*/
+    .asciiRainbow{
+        z-index: 0;
+        padding-left: 1%;
+        color:greenyellow;
+        animation: hue 10s infinite linear;
+        background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+        background-clip: text;
+	    -webkit-text-fill-color: transparent;
+        transition: transform ease-in-out 0.5s;
+    }
+    .asciiRainbow:hover{
+        transform: scale(105%);
+    }  
+    .graphcanvas{
+        background-color: var(--glass-backgrounds-color);
+        backdrop-filter: blur(5px);
+        border-radius: 5%;
+        aspect-ratio:auto 500 / 500;
+    }
+    .scrollmenu {
+            display:flex;
+            flex-wrap: nowrap;
+            width: 100%;
+            overflow-x: auto;
+            /*white-space: nowrap;*/
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+            justify-content: space-evenly;
+         
+     }
+</style>
+</head>
+<body>
+  <ul class="topnav">
+        <li><a href="./index.html">Home</a></li>
+        <!--<li><a href="./about-me.html">About Me</a></li>-->
+        <!--<li><a href="/expertise">My Expertise</a></li>-->
+        <li><a href="./contact.html">Contact Me</a></li>
+        <li class="dropdown-trigger"><p>Extras</p>
+        <div class="dropdown-menu">
+            <a href="./friends.html">Friends of The Site</a>
+            <a href="./stats.html">Videogame Stats</a>
+            <a href="./gallery.html">Gallery</a>
+            <a href="./toys.html">Toys</a>
+        </div></li>
+    </ul>
+    <div class="glassbg">
+  <div class="blob" style="top:-10%;left:-10%"></div>
+    <div class="blob2" style="top:20%;left:40%"></div>
+    <div class="blob3" style="top:40%;left:5%"></div></div>
+<div class="horiz-flex" style="padding-top:10%;">
+<span class="slidein right asciiRainbow">
+<pft style="font-family:'Courier New';white-space: pre;" class="asciiRainbow">
+ █████╗ ██████╗  ██████╗ ██╗   ██╗████████╗
+██╔══██╗██╔══██╗██╔═══██╗██║   ██║╚══██╔══╝   
+███████║██████╔╝██║   ██║██║   ██║   ██║      
+██╔══██║██╔══██╗██║   ██║██║   ██║   ██║      
+██║  ██║██████╔╝╚██████╔╝╚██████╔╝   ██║    
+╚═╝  ╚═╝╚═════╝  ╚═════╝  ╚═════╝    ╚═╝  
+</pft>
+<pft style="font-family:'Courier New';white-space: pre;"class="asciiRainbow">
+███╗   ███╗███████╗
+████╗ ████║██╔════╝
+██╔████╔██║█████╗
+██║╚██╔╝██║██╔══╝
+██║ ╚═╝ ██║███████╗
+╚═╝     ╚═╝╚══════╝
+</pft>
+</span>
+<div class="slidein left vertical-flex-right">
+<h1 class="gradient-text" style="justify-self:center;">Hey, I'm Seamus!</h1>
+<p>I am a programmer, artist, CAD designer, ametuer radio operator, and cat lover. I enjoy listening to music (as well as playing some too), writing code, and playing video games with my friends (my absolute favorite is <a href="https://tetr.io">Tetris</a>). I am interested in digital communication, ethical hacking, and honestly idk what else to put here...</p>
+</div>
+</div>
+<div class="horiz-flex">
+  <div class="slidein right vertical-flex-left">
+    <h1 class="gradient-text" style="justify-self:center;">Programming Experience</h1>
+    <p>I have been programming for <span id="progyears"></span> years, starting with Python. I also have experience with Java through AP CSA and FRC.</p>
+  </div>
+  <canvas class="graphcanvas slidein left" id="canvas1" width="400" height="400"></canvas>
+</div>
+<div class="horiz-flex">
+  <canvas class="graphcanvas slidein right" id="canvas2" width="400" height="400"></canvas>
+  <div class="slidein left vertical-flex-right">
+    <h1 class="gradient-text" style="justify-self:center;">Design Expertise</h1>
+    <p>Along with programming, I have broad experience regarding 3D CAD design and printing. I am most experienced with Fusion 360, which I learned through Mark Rober's Engineering Course.</p>
+  </div>
+</div>
+<!--grid allows you to organise things intuitively-->
+<footer class="footerGrid">
+<img title="Made on ascii-motion.app!" src="./assets/Favicon.svg" href="index.html" style="grid-area:LogoImg; justify-self: center;margin:10px;">
+<a style="grid-area:ContactLink;" href="./contact.html">Contact</a>
+<a style="grid-area:HomeLink;" href="./index.html">Home</a>
+<a style="grid-area:ExtrasLink" href="./extras.html">Extras</a>
+<a title="Well... You're already kind of here man." style="grid-area:AboutLink;" href="about-me.html">About</a>
+<p style="grid-area:Copywrite; color:rgb(157, 229, 146)" >Made by a real human!</p>
+<p style="grid-area:Year; color:rgb(11, 112, 213)">Seamus McManus 2026</p>
+</footer>
+</body>
+<script>
+  function drawStats(id,lbl1,per1,lbl2,per2,lbl3,per3,lbl4,per4,color) {
+        const canvas = document.getElementById(id);
+        const ctx = canvas.getContext('2d');
+        const width = canvas.width;
+        const center = canvas.width / 2;
+        //create x and y axes
+        ctx.font = "30px Cascadia Code";
+        ctx.textAlign = 'center';
+        ctx.fillStyle = 'white';
+        ctx.lineJoin = 'round';
+        ctx.lineCap = 'round';
+        ctx.fillText(lbl1,center,30);
+        ctx.fillText(lbl3,center,width-15);
+        ctx.save();
+        ctx.translate( center, center);
+        ctx.rotate(Math.PI/2);
+        ctx.fillText(lbl2,0,-width/2+30);
+        ctx.restore();
+        ctx.save();
+        ctx.translate( center, center);
+        ctx.rotate(-Math.PI/2);
+        ctx.fillText(lbl4,0,-width/2+30);
+        ctx.restore();
+        ctx.lineWidth = 14;
+
+        ctx.strokeStyle = 'rgba(100,100,100,0.9)';
+        ctx.beginPath(); ctx.moveTo(center,45); ctx.lineTo(center,width-45);
+        ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(45,center); ctx.lineTo(width-45,center);
+        ctx.stroke();
+        ctx.closePath();
+
+        ctx.lineWidth = 20;
+        ctx.strokeStyle = color+'0.98)';
+        let rangeStart = map(per1,0,100,center,45);
+        let stroke1 = map(per2,0,100,center,width-45);
+        let stroke2 = map(per3,0,100,center,width-45);
+        let stroke3 = map(per4,0,100,center,45);
+        ctx.beginPath();
+        ctx.moveTo(center,rangeStart);
+        ctx.lineTo(stroke1,center);
+        ctx.lineTo(center,stroke2);
+        ctx.lineTo(stroke3,center);
+        ctx.lineTo(center,rangeStart);
+        ctx.stroke();
+        ctx.closePath();
+         
+        ctx.fillStyle = color+'0.8)';
+        ctx.fill();
+        ctx.strokeStyle = 'red';
+        /*changes the endcap*/
+        ctx.lineCap = 'round';
+
+        
+
+    }
+    function map(value, in_min, in_max, out_min, out_max) {
+        return (value - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+    }
+    drawStats('canvas1',"Python",80,"Java",60,"HTML",60,"Javascript",30,'rgb(55, 234, 79,');
+    drawStats('canvas2',"Fusion 360",90,"TinkerCAD",80,"F360 CAM",60,"Onshape",20,'rgb(214, 92, 55,');
+    
+    document.addEventListener("DOMContentLoaded", function (){
+      document.getElementById("progyears").textContent = new Date().getFullYear()-2019;
+    });
+
+</script>
