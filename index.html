@@ -2,127 +2,123 @@
 <head>
     <title>The Seamus McManus Network</title>
    
+     <!--:hover will change the color of of an item when it is hovered on-->
     <meta charset="utf-8">
     <meta name="keywords" content="Seamus McManus, Seamus, KO6IIP, Shaymo, developer, software engineer, technology, AI, ai, development, programming, innovation">
     <meta name="author" content="Seamus McManus">
     <meta name="description" content="Official site of Seamus McManus. Learn about his projects, programming experience, and expertise.">
     <meta name="robots" content="index, follow">
     <link rel="icon" type="image/x-icon" href="./assets/Favicon.svg">
-<style> 
-    .ascii-text{
-        padding-top: 7%; 
-        animation: ascii-scale 2s infinite ease-in-out alternate,hue 10s infinite linear;
-        background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
-        background-clip: text;
-	    -webkit-text-fill-color: transparent;
-        text-align:center;
-        font-size:1.7vw;
-    }
-    @keyframes hue {
-        from {
-        -webkit-filter: hue-rotate(0deg) ;
+    <link rel="stylesheet" href="reused-styles.css">
+    <style>      
+        div.scrollmenu {
+            display:flex;
+            flex-wrap: nowrap;
+            align-items: stretch;
+            width: 100%;
+            overflow-x: auto;
+            /*white-space: nowrap;*/
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+            justify-content: space-evenly;
+         
         }
-        to {
-            -webkit-filter: hue-rotate(-360deg);
+        div.scrollmenu div.projectblock {
+           border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            text-wrap: auto;
+            padding:10px;
+            max-width: 300px;
+            margin: 10px;
+            transition: transform 0.5s ease-out;
+            border-radius: 10px;
+            background: rgba(51, 48, 48, 0.3);
+            backdrop-filter: blur(10px);
+           
         }
+        div.projectblock h3{
+            font-family:'Departure Mono';
+            transition: color 0.5s ease-out;
         }
-    @keyframes ascii-scale{
-        0%
-        { transform: scale(100%)}
-        100%{
-           transform: scale(95%);
+        div.projectblock:hover h3{
+            color:yellow;
         }
-    }
-    .batman-spin{
-        animation:batman-spin 2s linear;
-    }
-    @keyframes batman-spin{
-        100%{
-            transform:scale(10000%) rotate(10turn);
+        div.scrollmenu div.projectblock:hover {
+            transform: scale(102%);
         }
 
-    }
-    .gradient-text
-    {
-        background: linear-gradient(
-        90deg,
-        #0066ff,
-        #509fcc,
-        #0066ff
-    );
-    background-size: 200% auto;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        
-        animation: gradient-shift 2s linear infinite;
-    }
-    @keyframes gradient-shift {
-    to{
-        background-position: 200% center;
-        }
-    }
-
-
-    .glassbg{
-        position:absolute;
-        inset: 0;
-        overflow: hidden;
-        z-index: -1;
-        filter: blur(100px);
-    }
-    .invisible{
-        color:black;
-        text-decoration: none;
-    }
-    a {
-        color:rgb(145, 145, 145);
-        transition: color 0.3s ease-in-out
-    }
-    p a:hover{
-        color:rgb(237, 202, 26);
-    }
-</style>
+  </style>
 </head>
-<body style="font-family:Cascadia Code;text-align:center; background-color:black;color:white;">
-<div class="glassbg">
-    <div class="ascii-text">
-    <p style="white-space: pre;" id="asciiback">
- ██████╗ ██████╗ ███╗   ███╗██╗███╗   ██╗ ██████╗     ███████╗ ██████╗  ██████╗ ███╗   ██╗
-██╔════╝██╔═══██╗████╗ ████║██║████╗  ██║██╔════╝     ██╔════╝██╔═══██╗██╔═══██╗████╗  ██║
-██║     ██║   ██║██╔████╔██║██║██╔██╗ ██║██║  ███╗    ███████╗██║   ██║██║   ██║██╔██╗ ██║
-██║     ██║   ██║██║╚██╔╝██║██║██║╚██╗██║██║   ██║    ╚════██║██║   ██║██║   ██║██║╚██╗██║
-╚██████╗╚██████╔╝██║ ╚═╝ ██║██║██║ ╚████║╚██████╔╝    ███████║╚██████╔╝╚██████╔╝██║ ╚████║
- ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝     ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝
-</p>                                                                                      
-</div>
-</div>
-    <div class="ascii-text"id="asciifront">
-    <p style="white-space: pre;"> 
- ██████╗ ██████╗ ███╗   ███╗██╗███╗   ██╗ ██████╗     ███████╗ ██████╗  ██████╗ ███╗   ██╗
-██╔════╝██╔═══██╗████╗ ████║██║████╗  ██║██╔════╝     ██╔════╝██╔═══██╗██╔═══██╗████╗  ██║
-██║     ██║   ██║██╔████╔██║██║██╔██╗ ██║██║  ███╗    ███████╗██║   ██║██║   ██║██╔██╗ ██║
-██║     ██║   ██║██║╚██╔╝██║██║██║╚██╗██║██║   ██║    ╚════██║██║   ██║██║   ██║██║╚██╗██║
-╚██████╗╚██████╔╝██║ ╚═╝ ██║██║██║ ╚████║╚██████╔╝    ███████║╚██████╔╝╚██████╔╝██║ ╚████║
- ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝     ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝
-</p>                                                                                      
-</div>
 
-<h1 class="gradient-text" style="font-size:4.5vw">Come pay a visit a little later!</h1>     
-<p style="font-size:3vw;">Things are still in the works, but I promise <a class="a" href="moreinfo.html" style="text-decoration: none;">cool stuff</a> will be here very soon ;)</p>
-<p style="padding-top:500%;font-size:3vw;color:white;">oh, hi there! :D</p>
-<script>
-    let batmanEffect = new Audio('batman-transition.mp3');
-    const possibleSites = ["https://watching-grass-grow.com","https://everydaycode.com/","https://tetr.io/","https://milk.com","https://cdn.formandtemplate.com/image/employment-application-form-01.jpg","https://cdn.formandtemplate.com/image/employment-application-form-01.jpg","https://cdn.formandtemplate.com/image/employment-application-form-01.jpg","https://cdn.formandtemplate.com/image/employment-application-form-01.jpg"];
-    document.getElementById("asciifront").addEventListener("click",function() {
-		let link = possibleSites[Math.floor(Math.random()*possibleSites.length)];
-        let font =  document.getElementById("asciifront");
-        let fontUnder = document.getElementById("asciiback")
-        font.classList.add("batman-spin");
-        fontUnder.classList.add("batman-spin");
-        batmanEffect.play();
-        setTimeout(function() {font.classList.remove("batman-spin");
-		fontUnder.classList.remove("batman-spin");
-window.location.href=link;}, 2000);
-	})
-</script>
+<body style="font-family:'Cascadia Code', Consolas, 'Courier New'; background-color:black; color: white;text-align: center;">
+    <div class="glassbg">
+    <div class="blob" style="top:-10%;left:-10%"></div>
+    <div class="blob2" style="top:20%;left:60%"></div>
+    <div class="blob3" style="top:60%;left:5%"></div>
+    </div>
+    <ul class="topnav">
+        <!--<li><a href="./index.html">Home</a></li>-->
+        <li><a href="./about-me.html">About Me</a></li>
+        <!--<li><a href="/expertise">My Expertise</a></li>-->
+        <li><a href="./contact.html">Contact Me</a></li>
+        <li class="dropdown-trigger"><p>Extras</p>
+        <div class="dropdown-menu">
+            <a href="./friends.html">Friends of The Site</a>
+            <a href="./stats.html">Videogame Stats</a>
+            <a href="./gallery.html">Gallery</a>
+            <a href="./toys.html">Toys</a>
+        </div></li>
+    </ul>
+<div class="ascii-text">
+    <p style="white-space: pre;" >
+███████╗███████╗ █████╗ ███╗   ███╗██╗   ██╗███████╗
+██╔════╝██╔════╝██╔══██╗████╗ ████║██║   ██║██╔════╝
+███████╗█████╗  ███████║██╔████╔██║██║   ██║███████╗
+╚════██║██╔══╝  ██╔══██║██║╚██╔╝██║██║   ██║╚════██║
+███████║███████╗██║  ██║██║ ╚═╝ ██║╚██████╔╝███████║
+╚══════╝╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝ ╚═════╝ ╚══════╝
+    </p>                   
+<p style="white-space: pre;" >                                                                         
+███╗   ███╗ ██████╗███╗   ███╗ █████╗ ███╗   ██╗██╗   ██╗███████╗   ███╗   ██╗███████╗████████╗
+████╗ ████║██╔════╝████╗ ████║██╔══██╗████╗  ██║██║   ██║██╔════╝   ████╗  ██║██╔════╝╚══██╔══╝
+██╔████╔██║██║     ██╔████╔██║███████║██╔██╗ ██║██║   ██║███████╗   ██╔██╗ ██║█████╗     ██║   
+██║╚██╔╝██║██║     ██║╚██╔╝██║██╔══██║██║╚██╗██║██║   ██║╚════██║   ██║╚██╗██║██╔══╝     ██║   
+██║ ╚═╝ ██║╚██████╗██║ ╚═╝ ██║██║  ██║██║ ╚████║╚██████╔╝███████║██╗██║ ╚████║███████╗   ██║   
+╚═╝     ╚═╝ ╚═════╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   
+</p>
+</div>
+<h1 class="gradient-text">Welcome to the Network!</h1>
+<p style="font-size:medium;">This is the digital abode of Seamus McManus: Gamer, Ametuer Radio Operator, CAD Designer, and Programming Extrodinaire. Thanks for visiting!</p>    
+<h1 class="gradient-text">My Projects</h1>
+<div class="scrollmenu">
+        <div class="projectblock"><h3>My Arcade Table</h3><img src="./assets/ArcadeTable.jpg" style="max-height: 130px; max-width: auto;"><p>All homemade using RetroPie!</p></div>
+        <div class="projectblock"><h3>THE CUBE!!!</h3><img src="./assets/TheCube.jpg" style="max-height: 130px; max-width: auto;"><p>Uses projection mapping to add cool animations</p></div>
+        <div class="projectblock"><h3>Hailo AI Kit</h3><img src="./assets/AIKit.jpg" style="max-height: 130px; max-width: auto;"><p>3D-printed mount for the Hailo AI Kit for CV applications</p></div>
+         <div class="projectblock"><h3>ESPSimpleServer</h3><img src="./assets/esp32nodemcu.jpg" style="max-height: 130px; max-width: auto;"><p>Plug-and-play webserver that runs on an esp32</p></div>
+    </div>
+<h1 class="gradient-text">About Me</h1>
+<!--Margin=outside Padding=inside-->
+<p style="margin-top:0%; font-size:medium;">I am a designer, artist, and programmer with a wide 
+    range of experience in creative fields 
+    (if you can think of a topic, I have 
+    probably touched it at least once). 
+    Regarding my programming experience,
+    I have knowledge in Python, Java, and am currently learning HTML/JS Web Dev. I am currently the Programming
+    lead of <a href="https://daedalus2839.mailchimpsites.com/" class="gradient-text" style="background: linear-gradient(
+    90deg,yellow,rgb(230, 186, 105),yellow); background-size: 200% auto;background-size: 200% auto;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; text-decoration: none;
+    "><b>FRC Team 2839 Daedalus</b></a> as of
+    the 2027-2028 School Year (I will be
+    assuming the role next year).</p>
+<!--grid allows you to organise things intuitively-->
+<footer class="footerGrid">
+<img title="Made on ascii-motion.app!" src="./assets/Favicon.svg" href="index.html" style="grid-area:LogoImg; justify-self: center;margin:10px;">
+<a style="grid-area:ContactLink;" href="./contact.html">Contact</a>
+<a title="Well... You're already kind of here man." style="grid-area:HomeLink;" href="./index.html">Home</a>
+<a style="grid-area:ExtrasLink" href="./extras.html">Extras</a>
+<a style="grid-area:AboutLink;" href="about-me.html">About</a>
+<p style="grid-area:Copywrite; color:rgb(157, 229, 146)" >Made by a real human!</p>
+<p style="grid-area:Year; color:rgb(11, 112, 213)">Seamus McManus 2026</p>
+</footer>
 </body>
